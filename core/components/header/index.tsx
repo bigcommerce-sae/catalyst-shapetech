@@ -2,7 +2,7 @@ import { ShoppingCart, User } from 'lucide-react';
 import { getLocale } from 'next-intl/server';
 import { ReactNode, Suspense } from 'react';
 
-import { getSessionCustomerId } from '~/auth';
+import { auth } from '~/auth';
 import { FragmentOf, graphql } from '~/client/graphql';
 import { headerLinksTransformer } from '~/data-transformers/header-links-transformer';
 import { logoTransformer } from '~/data-transformers/logo-transformer';
@@ -55,8 +55,7 @@ interface Props {
 }
 
 export const Header = async ({ cart, data }: Props) => {
-  const customerId = await getSessionCustomerId();
-
+  const session = await auth();
   const locale = await getLocale();
 
   /**  To prevent the navigation menu from overflowing, we limit the number of categories to 6.
@@ -68,7 +67,7 @@ export const Header = async ({ cart, data }: Props) => {
   return (
     <ComponentsHeader
       account={
-        customerId ? (
+        session ? (
           <Dropdown
             items={[
               { href: '/account', label: 'My account' },
