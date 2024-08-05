@@ -3,8 +3,9 @@ import { useFormatter, useTranslations } from 'next-intl';
 
 import { ProductItemFragment } from '~/client/fragments/product-item';
 import { FragmentOf, graphql } from '~/client/graphql';
-import { ProductForm } from '~/components/product-form';
+// import { ProductForm } from '~/components/product-form';
 import { ProductFormFragment } from '~/components/product-form/fragment';
+import { ProductFormWrapper } from '~/components/product-form/refactored/product-form-wrapper';
 
 import { ProductSchema, ProductSchemaFragment } from './product-schema';
 import { ReviewSummary, ReviewSummaryFragment } from './review-summary';
@@ -157,7 +158,8 @@ export const Details = ({ product }: Props) => {
         </div>
       )}
 
-      <ProductForm data={product} />
+      <ProductFormWrapper data={product} />
+      {/* <ProductForm data={product} /> */}
 
       <div className="my-12">
         <h2 className="mb-4 text-xl font-bold md:text-2xl">{t('additionalDetails')}</h2>

@@ -20,7 +20,7 @@ export const ProductFormFragment = graphql(
           }
         }
       }
-      productOptions(first: 10) {
+      productOptions {
         edges {
           node {
             __typename
