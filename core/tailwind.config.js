@@ -8,20 +8,7 @@ const config = {
   theme: {
     extend: {
       colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
-        black: '#000000',
-        primary: '#053FB0',
         secondary: '#3071EF',
-        white: '#FFFFFF',
-        error: {
-          DEFAULT: '#AD0000',
-          secondary: '#C62828',
-        },
-        success: {
-          DEFAULT: '#146622',
-          secondary: '#388E3C',
-        },
         gray: {
           100: '#F1F3F5',
           200: '#CFD8DC',
@@ -30,9 +17,40 @@ const config = {
           500: '#546E7A',
           600: '#091D45',
         },
+
+        // @todo accent
+        // @todo warning
+        // @todo info
+        // @todo background
+        // @todo foreground
+        // @todo contrast
+
+        // ✅ DONE
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          highlight: 'color-mix(in oklab, hsl(var(--primary)), white 60%)',
+          shadow: 'color-mix(in oklab, hsl(var(--primary)), black 60%)',
+        },
+        error: {
+          DEFAULT: 'hsl(var(--error))',
+          highlight: 'color-mix(in oklab, hsl(var(--error)), white 60%)',
+          shadow: 'color-mix(in oklab, hsl(var(--error)), black 60%)',
+          // @todo change to highlight?
+          secondary: '#C62828',
+        },
+        success: {
+          DEFAULT: 'hsl(var(--success))',
+          highlight: 'color-mix(in oklab, hsl(var(--success)), white 60%)',
+          shadow: 'color-mix(in oklab, hsl(var(--success)), black 60%)',
+          // @todo change to highlight?
+          secondary: '#388E3C',
+        },
       },
       fontFamily: {
+        // @todo heading
+        // @todo body
         sans: ['var(--font-inter)'],
+        // @todo mono
       },
       borderColor: {
         DEFAULT: '#CFD8DC',
