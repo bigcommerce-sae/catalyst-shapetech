@@ -6,7 +6,7 @@ import { z } from 'zod';
 
 import { assignCartToCustomer } from './client/mutations/assign-cart-to-customer';
 import { login } from './client/mutations/login';
-import { unassignCartFromCustomer } from './client/mutations/unassign-cart-from-customer';
+import { logout } from './client/mutations/logout';
 
 export const Credentials = z.object({
   email: z.string().email(),
@@ -62,16 +62,7 @@ const config = {
       }
     },
     async signOut() {
-      const cookieCartId = cookies().get('cartId')?.value;
-
-      if (cookieCartId) {
-        try {
-          await unassignCartFromCustomer(cookieCartId);
-        } catch (error) {
-          // eslint-disable-next-line no-console
-          console.error(error);
-        }
-      }
+      await logout();
     },
   },
   providers: [
