@@ -2,9 +2,10 @@ import { removeEdgesAndNodes } from '@bigcommerce/catalyst-client';
 import { cache } from 'react';
 
 import { client } from '~/client';
+import { PaginationFragment } from '~/client/fragments/pagination';
 import { graphql } from '~/client/graphql';
 import { revalidate } from '~/client/revalidate-target';
-import { BlogPostCardFragment } from '~/components/blog-post-card';
+import { BlogPostCardFragment } from '~/components/blog-post-card/fragment';
 
 interface BlogPostsFiltersInput {
   tagId?: string;
@@ -38,10 +39,7 @@ const BlogPostsPageQuery = graphql(
                 }
               }
               pageInfo {
-                hasNextPage
-                hasPreviousPage
-                startCursor
-                endCursor
+                ...PaginationFragment
               }
             }
           }
@@ -49,7 +47,7 @@ const BlogPostsPageQuery = graphql(
       }
     }
   `,
-  [BlogPostCardFragment],
+  [BlogPostCardFragment, PaginationFragment],
 );
 
 export const getBlogPosts = cache(

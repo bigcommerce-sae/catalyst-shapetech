@@ -6,10 +6,13 @@ import { getLocale, getMessages, getTranslations } from 'next-intl/server';
 import { client } from '~/client';
 import { graphql } from '~/client/graphql';
 import { revalidate } from '~/client/revalidate-target';
-import { Footer, FooterFragment } from '~/components/footer/footer';
-import { Header, HeaderFragment } from '~/components/header';
+import { Footer } from '~/components/footer/footer';
+import { FooterFragment } from '~/components/footer/fragment';
+import { Header } from '~/components/header';
 import { CartLink } from '~/components/header/cart';
-import { ProductCard, ProductCardFragment } from '~/components/product-card';
+import { HeaderFragment } from '~/components/header/fragment';
+import { ProductCard } from '~/components/product-card';
+import { ProductCardFragment } from '~/components/product-card/fragment';
 import { SearchForm } from '~/components/search-form';
 
 export const metadata = {

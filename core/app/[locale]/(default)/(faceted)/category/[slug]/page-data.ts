@@ -4,7 +4,7 @@ import { getSessionCustomerId } from '~/auth';
 import { client } from '~/client';
 import { graphql, VariablesOf } from '~/client/graphql';
 import { revalidate } from '~/client/revalidate-target';
-import { BreadcrumbsFragment } from '~/components/breadcrumbs';
+import { BreadcrumbsFragment } from '~/components/breadcrumbs/fragment';
 
 import { CategoryTreeFragment } from './_components/sub-categories';
 

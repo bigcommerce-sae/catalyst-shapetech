@@ -5,11 +5,11 @@ import * as z from 'zod';
 
 import { getSessionCustomerId } from '~/auth';
 import { client } from '~/client';
+import { PricingFragment } from '~/client/fragments/pricing';
 import { graphql } from '~/client/graphql';
 import { revalidate } from '~/client/revalidate-target';
 import { BcImage } from '~/components/bc-image';
 import { Link } from '~/components/link';
-import { PricingFragment } from '~/components/product-card';
 import { SearchForm } from '~/components/search-form';
 import { Button } from '~/components/ui/button';
 import { Rating } from '~/components/ui/rating';
