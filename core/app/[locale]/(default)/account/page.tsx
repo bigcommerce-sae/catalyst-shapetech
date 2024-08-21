@@ -3,9 +3,9 @@ import { getTranslations } from 'next-intl/server';
 import { ReactNode } from 'react';
 
 import { Link } from '~/components/link';
-import { Message } from '~/components/ui/message';
 import { LocaleType } from '~/i18n';
 
+import { MessageWrapper } from './[tab]/_components/message-wrapper';
 import { getStoreName } from './page-data';
 
 interface AccountItem {
@@ -51,9 +51,7 @@ export default async function AccountPage({ params: { locale }, searchParams }: 
       <h1 className="my-8 text-4xl font-black lg:my-8 lg:text-5xl">{t('heading')}</h1>
 
       {isRegister && (
-        <Message className="col-span-full mb-8 w-full text-gray-500" variant="success">
-          <p>{t('successMessage', { storeName: storeName || 'Catalyst' })}</p>
-        </Message>
+        <MessageWrapper message={t('successMessage', { storeName: storeName || 'Catalyst' })} />
       )}
 
       <div className="mb-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
