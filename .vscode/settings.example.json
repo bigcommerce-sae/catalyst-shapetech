@@ -3,6 +3,7 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.workingDirectories": [
     { "pattern": "core" },
+    { "pattern": "canvas" },
     { "pattern": "packages/*/" }
   ]
 }
