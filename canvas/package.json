@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate": "node scripts/generate.mjs",
+    "dev": "pnpm run generate && next dev",
+    "build": "pnpm run generate && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@gql.tada/cli-utils": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "gql.tada": "^1.8.5",
     "next": "14.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
