@@ -32,7 +32,7 @@ const bigcommerceGraphQLEndpoint =
 await generateSchema({
   input: bigcommerceGraphQLEndpoint,
   headers: { Authorization: `Bearer ${bigcommerceCIT}` },
-  output: join(canvasRootDirPath, 'bigcommerce.graphql'),
+  output: join(canvasRootDirPath, 'src/bigcommerce.graphql'),
   tsconfig: undefined,
 });
 
